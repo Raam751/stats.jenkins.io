@@ -58,6 +58,9 @@ const GraphModal: React.FC<GraphModalProps> = ({ open, onClose, type, year, mont
         >
             <Paper
                 elevation={16}
+                role="dialog"
+                aria-modal="true"
+                aria-label={`${type} chart for ${month} ${year}`}
                 sx={{
                     width: '70vw',
                     height: '60vh',
