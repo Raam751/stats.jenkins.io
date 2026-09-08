@@ -19,8 +19,6 @@ interface GraphModalProps {
     month: string
 }
 
-// Spoken labels for each chart. Keyed on GraphType so adding a chart without a
-// label is a compile error rather than a silently unreadable announcement.
 const GRAPH_LABELS: Record<GraphType, string> = {
     jenkins: 'Jenkins installations by version',
     jobs: 'Job executions',
@@ -33,8 +31,6 @@ const GRAPH_LABELS: Record<GraphType, string> = {
     'total-executors': 'Executors per install',
 }
 
-// month arrives as a 1-based numeric string. Day is pinned to 1 so a short
-// month cannot overflow into the next one.
 const getMonthName = (month: string, year: string) => {
     const monthIndex = Number(month) - 1
     if (!Number.isInteger(monthIndex) || monthIndex < 0 || monthIndex > 11) {
